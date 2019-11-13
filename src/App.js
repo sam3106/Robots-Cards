@@ -9,7 +9,8 @@ class App extends React.Component {
     super();
     this.state = {
       monsters: [],
-      searchField: ""
+      searchField: "",
+      title: ""
     };
   }
   componentDidMount() {
@@ -19,10 +20,10 @@ class App extends React.Component {
       .catch(error => console.log("no dice"));
   }
   handleChange = e => {
-    this.setState({ searchField: e.target.value });
+    this.setState({ searchField: e.target.value, title: e.target.value });
   };
   render() {
-    const { monsters, searchField } = this.state;
+    const { monsters, searchField, title } = this.state;
     const filteredMonsters = monsters.filter(monster =>
       monster.name.toLowerCase().includes(searchField.toLowerCase())
     );
@@ -31,7 +32,7 @@ class App extends React.Component {
         <h1>Monsters Rolodex</h1>
         <SearchBox
           placeholder="place holder"
-          handleChange={e => this.setState({ searchField: e.target.value })}
+          handleChange={this.handleChange}
         />
 
         <CardList monsters={filteredMonsters} />
