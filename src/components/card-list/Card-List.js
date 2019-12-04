@@ -8,7 +8,7 @@ const CardList = props => {
     <div className="card-list">
       {monsters.map(monsterName => (
         <Card key={monsterName.id} monsters={monsterName}>
-          jerk
+         
         </Card>
       ))}
     </div>

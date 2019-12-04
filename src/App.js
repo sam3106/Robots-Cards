@@ -9,8 +9,7 @@ class App extends React.Component {
     super();
     this.state = {
       monsters: [],
-      searchField: "",
-      title: ""
+      searchField: ""
     };
   }
   componentDidMount() {
@@ -29,7 +28,7 @@ class App extends React.Component {
     );
     return (
       <div className="App">
-        <h1>Monsters Rolodex</h1>
+        <h1>Robots Cards</h1>
         <SearchBox
           placeholder="place holder"
           handleChange={this.handleChange}
